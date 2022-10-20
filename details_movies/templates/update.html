@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block body %}
+<div class="bg-dark h-100">
+  <div class="container">
+    <div class="row justify-content-center py-5">
+      <div
+        class="col-6 border border-1 py-3 px-4 rounded-3 fw-semibold text-light border-light border-opacity-50 text-opacity-50"
+      >
+        <h4 class="p-3 fw-bold">Update Movie Details</h4>
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %} {{form.as_table}}
+          <input
+            class="form-control fw-semibold btn btn-outline-light opacity-50 mt-4"
+            type="submit"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,10 @@
+body {
+  background-color: white;
+}
+.img {
+  border-radius: 15px;
+}
+.text_size {
+  font-size: 10px;
+  color: hsl(0, 1%, 21%, 0.5);
+}

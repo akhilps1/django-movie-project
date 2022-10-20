@@ -1,0 +1,37 @@
+{% extends 'base.html'%} {% block body %}
+
+<section>
+  <div class="container-fluid">
+    <div class="row mx-4 d-flex">
+      <h2 class="fw-bold mt-3">Coming Soon</h2>
+      {% for i in movie_lists %}
+      <div class="col-lg-2 col-md-3 col-sm-4 justify-content-around my-3 p-1">
+        <a
+          href="{% url 'movies_home:movie' i.id %}"
+          class="text-decoration-none text-dark"
+        >
+          <div class="d-flex flex-column rounded-4">
+            <img
+              class="rounded-top"
+              src="{{i.movie_thumbnail.url}}"
+              alt="Card image cap"
+            />
+            <div class="p-2">
+              <h6 class="fw-bold fs-5">{{i.movie_title}}</h6>
+              <div class="pt-2">
+                <i class="bi bi-star opacity-50 text-dark"></i>
+                <span class="opacity-50 text-dark"> {{i.movie_rating}}</span>
+              </div>
+              <p style="font-size: 14px; color: hsl(0, 1%, 21%, 0.5)">
+                {{i.movie_tag}}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock body %}
